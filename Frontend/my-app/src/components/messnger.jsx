@@ -3,7 +3,6 @@ import LoginDialog from './account/loginDialog';
 import { useContext } from 'react';
 import ChatDialog from './chat/ChatDialog';
 import { AccountContext } from './context/AccountProvider';
-import { Component } from 'react';
 
 
 const LoginHeader = styled(AppBar)`
