@@ -10,6 +10,7 @@ app.use(cors());
 const server = http.createServer(app);
 
 const { Server } = require('socket.io');
+const connection = require('./models/db');
 
 const io = new Server(server, {
   cors: {
@@ -26,6 +27,8 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('newMessage', data);
   });
 });
+
+connection();
 
 server.listen(PORT, () => {
   console.log(`listen on ${PORT}...`);
