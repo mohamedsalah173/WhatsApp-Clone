@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const MONGO_URL = 'mongodb+srv://user:ZIHhuSPeDzbId9DG@whatsappclone.kg3pnx7.mongodb.net/?retryWrites=true&w=majority';
+const MONGO_URL = require('./dbConfigurations');
 
 const connection = async () => {
   try {
