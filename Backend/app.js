@@ -1,15 +1,25 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const express = require('express');
 const cors = require('cors');
-
+const parser = require('body-parser');
 const app = express();
 const http = require('http');
 
+const { Server } = require('socket.io');
+
+app.use(parser.json());
+app.use(parser.urlencoded());
+
 app.use(cors());
+
+const router = require('./routes/index');
+
+app.use('/',router);
+
+app.use(express.json());
 
 const server = http.createServer(app);
 
-const { Server } = require('socket.io');
 const connection = require('./models/db');
 
 const io = new Server(server, {
