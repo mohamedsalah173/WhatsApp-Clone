@@ -9,6 +9,7 @@ import { AccountContext } from "../../context/AccountProvider";
 const Component = styled(Box)`
     height: 81vh;
     overflow: overlay;
+    width: 20rem;
 `
 
 

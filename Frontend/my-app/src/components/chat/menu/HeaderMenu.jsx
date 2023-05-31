@@ -7,15 +7,14 @@ import { AccountContext } from '../../context/AccountProvider';
 
 function HeaderMenu() {
     const {setAccount} = useContext(AccountContext)
-    const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
+    const [open, setOpen] = useState(null);
+    const isOpen = Boolean(open);
 
     const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
+        setOpen(event.currentTarget);
     };
     const handleClose = () => {
-        setAnchorEl(null);
-        setAccount(null)
+        setOpen(null);
     };
 
     return (
@@ -25,8 +24,9 @@ function HeaderMenu() {
                 onClick={handleClick}
             />
             <Menu
-                anchorEl={anchorEl}
+                anchorEl={open}
                 open={open}
+                keepMounted
                 onClose={handleClose}
                 transformOrigin={{
                     vertical:'top',

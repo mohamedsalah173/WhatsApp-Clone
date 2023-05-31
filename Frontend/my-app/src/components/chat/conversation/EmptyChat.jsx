@@ -31,7 +31,7 @@ const Title = styled(Typography)`
     color: #41525d
 `
 
-const Conversation = ()=>{
+const EmptyChat = ()=>{
 
 
     return(
@@ -47,4 +47,4 @@ const Conversation = ()=>{
     )
 }
 
-export default Conversation
+export default EmptyChat

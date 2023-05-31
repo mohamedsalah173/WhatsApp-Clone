@@ -24,4 +24,12 @@ export const getUsers = async ()=>{
 
 }
 
+export const setConversation = async(data)=>{
+    try {
+        await axios.post(`${url}/setconversation`)
+    } catch (error) {
+        
+    }
+}
+
 export default addUser
